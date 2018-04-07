@@ -20,5 +20,5 @@ app.post('/api/uploadPic', route.uploadPic)
 app.use(function(req, res, next) {
     res.render('404');
 })
-
+console.log('listen 2000')
 app.listen(2000);
