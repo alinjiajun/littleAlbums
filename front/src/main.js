@@ -6,8 +6,11 @@ import Axios from 'Axios';
 import ElementUi from 'element-ui';
 import 'element-ui/lib/theme-default/index.css';
 import router from './router'
+import 'axios-progress-bar/dist/nprogress.css'
+import { loadProgressBar } from 'axios-progress-bar'
+import store from './store'
+loadProgressBar();
 var server = require('@/server')
-
 Vue.use(ElementUi);
 Vue.config.productionTip = false
 Vue.prototype.$http = Axios
@@ -15,6 +18,7 @@ Vue.prototype.$http = Axios
 new Vue({
     el: '#app',
     router,
+    store,
     components: { App },
     template: '<App/>'
 })

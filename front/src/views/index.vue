@@ -1,10 +1,10 @@
 <template>
 <div class="albums">
     <el-tabs v-model="activeName" type="card" >
-        <el-tab-pane label="用户管理" name="/">
+        <el-tab-pane label="我的相册" name="/">
           <albums></albums>
         </el-tab-pane>
-        <el-tab-pane label="配置管理" name="upload">
+        <el-tab-pane label="上传图片" name="upload">
           <upload></upload>
         </el-tab-pane>
   </el-tabs>

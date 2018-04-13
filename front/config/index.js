@@ -20,11 +20,21 @@ module.exports = {
                     proxyRes.headers['Content-Type'] = 'application/json; charset=utf-8'
                 },
                 changeOrigin: true
+            },
+            '/uploads': {
+                target: 'http://127.0.0.1:2000',
+                pathRewrite: {
+                    '^/uploads': '/uploads'
+                },
+                onProxyRes: function(proxyRes, req, res) {
+                    proxyRes.headers['Content-Type'] = 'image/jpeg; charset=utf-8'
+                },
+                changeOrigin: true
             }
         },
 
         // Various Dev Server settings
-        // host: 'localhost', // can be overwritten by process.env.HOST
+        host: 'localhost', // can be overwritten by process.env.HOST
         port: 8082, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
         autoOpenBrowser: true,
         errorOverlay: true,
